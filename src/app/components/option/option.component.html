@@ -1,0 +1,109 @@
+<div *ngIf="procedure">
+  <div class="card">
+    <div class="card-image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" (click)="onSelectProcedure(procedure)">
+        <path [attr.d]="generatePath(procedure.linkPhoto)"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </div>
+    <div class="card-content">
+      <div class="content">
+          <h4 class="content-title">{{ procedure.name }}</h4>
+          <p class="content-subtitle">{{ procedure.description }}</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="card-button" (click)="onSelectProcedure(procedure)">
+        <span>Seleccionar</span>
+      </button>
+    </div>
+  </div>
+</div>
+<style>
+  .card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 1px;
+    color: var(--nepal-800);
+    line-height: 2.1;
+    align-items: center;
+    padding: 1.6rem 0.9rem 0.9rem;
+    letter-spacing: 0.02rem;
+    width: 350px;
+    height: 400px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .card-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  .card-image svg{
+    width: 60px;
+    height: 50px;
+    color: var(--nepal-800);
+    cursor: pointer;
+  }
+  .card-image svg:hover{
+    color: var(--nepal-600);
+    transform: scale(1.1);
+  }
+
+  .card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .content-title{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  .content-subtitle{
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+  }
+  .card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .card-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--nepal-800);
+    color: var(--nepal-50);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .card-button:hover{
+    background-color: var(--nepal-600);
+    transform: scale(1.1);
+
+  }
+</style>
+

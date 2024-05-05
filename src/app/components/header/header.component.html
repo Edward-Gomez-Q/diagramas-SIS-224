@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="container-logo">
+    <img class="logo" [ngSrc] = "imgLogo" alt="logo" width="50" height="50" />
+    <hr class="line" />
+    <h4 class="title">
+      SIS-224
+    </h4>
+  </div>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a *ngFor="let item of items" [routerLink]="item.link" (mouseenter)="item.showTooltip = true" (mouseleave)="item.showTooltip = false">
+          <img class="item" [ngSrc]="item.img" alt="{{ item.tooltip }}" width="30" height="30" />
+          <div class="tooltip" *ngIf="item.showTooltip">{{ item.tooltip }}</div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,11 @@
+<main class="welcome-page">
+  <h1 class="">
+    {{title}}
+  </h1>
+  <p>
+    {{description}}
+  </p>
+  <div class="container-diagram-option">
+    <app-option *ngFor="let procedure of listProcedures" [procedure]="procedure"></app-option>
+  </div>
+</main>
